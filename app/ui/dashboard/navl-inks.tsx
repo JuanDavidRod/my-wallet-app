@@ -37,7 +37,7 @@ const navLinks = () => {
           <li key={link.id}>
             <a
               href={link.page}
-              className="flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3"
+              className="flex h-9 grow items-center justify-center rounded-md p-3 text-lg font-semibold mb-3 bg-gradient-to-r from-[#f562e4] from-0% via-[#8c63ec] via-35% to-[#3763f2] to-100% hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3"
             >
               {LinkIcon}
               <p className="hidden md:block">{link.name}</p>

@@ -1,33 +1,14 @@
 'use client'
+import { usePathname } from 'next/navigation'
+import Link from 'next/link'
+import clsx from 'clsx'
+interface Props {
+  links: MenuLink[]
+}
 
-const links = [
-  {
-    id: 1,
-    page: '/dashboard',
-    name: 'Home',
-    icon: '',
-  },
-  {
-    id: 2,
-    page: '/dashboard/movimientos',
-    name: 'Movimientos',
-    icon: '',
-  },
-  {
-    id: 3,
-    page: '/dashboard/cuentas',
-    name: 'Cuentas',
-    icon: '',
-  },
-  {
-    id: 4,
-    page: '/dashboard/herramientas',
-    name: 'Herramientas',
-    icon: '',
-  },
-]
+const navLinks = ({ links }: Props) => {
+  const pathname = usePathname()
 
-const navLinks = () => {
   return (
     <ul>
       {links.map((link) => {
@@ -35,13 +16,19 @@ const navLinks = () => {
 
         return (
           <li key={link.id}>
-            <a
+            <Link
               href={link.page}
-              className="mb-3 flex h-9 grow items-center justify-center rounded-md bg-gradient-to-r from-[#f562e4] from-0% via-[#8c63ec] via-35% to-[#3763f2] to-100% p-3 text-lg font-semibold hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3"
+              className={clsx(
+                'mb-5 flex h-9 grow items-center justify-center rounded-lg from-[#f562e4] from-0% via-[#8c63ec] via-35% to-[#3763f2] to-100% p-3 text-xl font-light hover:bg-gradient-to-r md:flex-none md:justify-start md:p-2 md:px-3',
+                {
+                  'bg-gradient-to-r from-[#f562e4] from-0% via-[#8c63ec] via-35% to-[#3763f2] to-100%':
+                    pathname === link.page,
+                },
+              )}
             >
               {LinkIcon}
               <p className="hidden md:block">{link.name}</p>
-            </a>
+            </Link>
           </li>
         )
       })}

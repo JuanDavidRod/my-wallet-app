@@ -1,7 +1,11 @@
 import React from 'react'
 
-const page = () => {
-  return <div>herramientas</div>
+const Tools = () => {
+  return (
+    <div>
+      <h1 className="mb-10 text-4xl font-bold">Herramientas</h1>
+    </div>
+  )
 }
 
-export default page
+export default Tools

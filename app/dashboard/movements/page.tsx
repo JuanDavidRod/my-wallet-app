@@ -1,7 +1,11 @@
 import React from 'react'
 
-const page = () => {
-  return <div>movimientos</div>
+const Movements = () => {
+  return (
+    <div>
+      <h1 className="mb-10 text-4xl font-bold">Movimientos</h1>
+    </div>
+  )
 }
 
-export default page
+export default Movements
